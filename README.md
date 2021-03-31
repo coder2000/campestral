@@ -42,7 +42,7 @@
     <br />
     <a href="https://github.com/coder2000/campestral">View Demo</a>
     ·
-    <a href="https://github.com/coder2000/campestral/issues">campestralrt Bug</a>
+    <a href="https://github.com/coder2000/campestral/issues">Report Bug</a>
     ·
     <a href="https://github.com/coder2000/campestral/issues">Request Feature</a>
   </p>
