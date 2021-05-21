@@ -8,6 +8,7 @@ services:
     depends_on:
       - db
       - redis
+      - webpack
     ports:
       - "3000:3000"
     volumes:
@@ -17,6 +18,23 @@ services:
     env_file: .env
     environment:
       RAILS_ENV: development
+      WEBPACKER_DEV_SERVER_HOST: webpack
+
+  webpack:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - gem_cache:/usr/local/bundle/gems
+      - node_modules:/app/node_modules
+    ports:
+      - "3035:3035"
+    environment:
+      NODE_ENV: development
+      RAILS_ENV: development
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
+    entrypoint: ./entrypoints/webpack-entrypoint.sh
 
   db:
     image: postgres:12.1
