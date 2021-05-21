@@ -1,0 +1,2 @@
+CREATE USER campestral;
+ALTER USER campestral WITH SUPERUSER;

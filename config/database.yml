@@ -23,7 +23,11 @@ default: &default
 
 development:
   <<: *default
-  database: campestral_development
+  database: <%= ENV['DATABASE_NAME'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  port: <%= ENV['DATABASE_PORT'] || '5432' %>
+  host: <%= ENV['DATABASE_HOST'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,6 +85,4 @@ test:
 #
 production:
   <<: *default
-  database: campestral_production
-  username: campestral
-  password: <%= ENV['CAMPESTRAL_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
