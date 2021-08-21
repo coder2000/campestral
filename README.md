@@ -121,9 +121,17 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Use docker-compose to start PostgreSQL and Redis
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```sh
+docker-compose up
+```
+
+Start your app and webpack-dev-server with Foreman
+
+```sh
+foreman start
+```
 
 <!-- ROADMAP -->
 
